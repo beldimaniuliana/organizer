@@ -20,6 +20,7 @@
 
     <link rel = "stylesheet" type = "text/css" href = "http://localhost/organizer/assets/css/organizer.css">
     <link rel = "stylesheet" type = "text/css" href = "http://localhost/organizer/assets/css/home.css">
+    <link rel = "stylesheet" type = "text/css" href = "http://localhost/organizer/assets/css/create_table.css">
 
 </head>
 
@@ -41,7 +42,7 @@
                             <a class="dropdown-toggle" data-toggle="dropdown" href="#">Others
                                 <span class="caret"></span></a>
                             <ul class="dropdown-menu">
-                                <li><a href="#">Page 1-1</a></li>
+                                <li><a href="<?php echo  base_url(),"organizer/view/create_table"?>">Create table</a></li>
                                 <li><a href="#">Page 1-2</a></li>
                                 <li><a href="#">Page 1-3</a></li>
                             </ul>
