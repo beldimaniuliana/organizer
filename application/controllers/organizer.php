@@ -4,22 +4,29 @@ class Organizer extends CI_Controller {
 
     function __construct() {
         parent::__construct();
+        $this->load->model('summary_model');
     }
 
     public function index() {
-       $this->load_page("organizer/organizer", "Organizer");
+        $this->view("organizer");
     }
 
-    public function load_page($content, $title, $send_data = "", $data_name = "") {
-        $data[$data_name] = $send_data;
-        $data['title'] = $title;
+    public function view($page = "organizer") {
+        if(! file_exists(APPPATH.'views/menu/'.$page.'.php')) {
+            show_404();
+        }
+        if($page == 'summary')
+            $data['summary'] = $this->get_summary();
+
+        $data['title'] = ucfirst($page); //Capitalize the first letter
+
         $this->load->view('includes/header', $data);
-        $this->load->view('includes/menu');
-        $this->load->view($content, $data);
-        $this->load->view('includes/footer');
+        $this->load->view("menu/".$page, $data);
+        $this->load->view('includes/footer', $data);
     }
 
-    public function load_summary() {
-        $this->load_page("menu/summary", "Summary");
+    public function get_summary() {
+        $data = $this->summary_model->get_summary();
+        return $data;
     }
 }

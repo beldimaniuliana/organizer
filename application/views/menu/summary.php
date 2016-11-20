@@ -1,11 +1,27 @@
-<?php if ( ! defined('BASEPATH')) exit('No direct script access allowed');?>
-<div class="container">
-  <h2>Simple Collapsible</h2>
-  <p>Click on the button to toggle between showing and hiding content.</p>
-  <button type="button" class="btn btn-info" data-toggle="collapse" data-target="#demo">Simple collapsible</button>
-  <div id="demo" class="collapse">
-Lorem ipsum dolor sit amet, consectetur adipisicing elit,
-    sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
-    quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
-  </div>
-</div>
+
+    <div class="container margin-from-header">
+        <h2>Summary</h2>
+        <p>What can I do ???</p>
+        <table class="table table-hover">
+            <thead>
+            <tr>
+                <th>Name</th>
+                <th>Description</th>
+            </tr>
+            </thead>
+
+            <tbody>
+            <?php
+                if(isset($summary)) {
+                    foreach($summary as $row) {
+                        echo "<tr>";
+                        echo  "<td>". $row->name ."</td>";
+                        echo  "<td>". $row->description ."</td>";
+                        echo "<tr>";
+                    }
+                }
+            ?>
+            </tbody>
+
+        </table>
+    </div>

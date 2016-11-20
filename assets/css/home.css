@@ -1,0 +1,14 @@
+
+.btn-info {
+    background-color: #2E2E2E;
+    border-color: black;
+}
+
+.btn-info:link {
+    background-color: #27383F;
+}
+
+.btn-info:hover {
+    background-color: #8ba8af;;
+    border-color: black;
+}
